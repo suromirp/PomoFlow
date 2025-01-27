@@ -1,0 +1,63 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:PomoFlow.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="385" d:DesignHeight="335"
+             x:Class="PomoFlow.Views.MainView"
+             x:DataType="vm:MainViewModel">
+	<Design.DataContext>
+		<vm:MainViewModel />
+	</Design.DataContext>
+	
+	<Grid>
+		<!-- Layer for background -->
+		<Grid>
+			<!-- BackgroundImages -->
+			<Image Name="BackgroundImage"
+				   Stretch="UniformToFill"
+HorizontalAlignment="Stretch"
+VerticalAlignment="Stretch"
+				   IsVisible="False" />
+			<!-- Invisible from start -->
+
+			<Border Name="ShortBreakBackground" Background="#A8D5BA"
+			IsVisible="False"
+					/>
+			<Border Name="LongBreakBackground" Background="#FFB347"
+			IsVisible="False"
+					/>
+			<!-- Default Background -->
+			<Border Name="DefaultBackground"
+					Background="#FF6347"
+					IsVisible="True"
+					/>
+		</Grid>
+
+		<StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+			<Border Width="400" Height="340" CornerRadius="10" ClipToBounds="True">
+				<Grid>
+					<Border Background="Black" Opacity="0.2" CornerRadius="10" />
+
+					<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+						<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+							<Button Name="PomodoroButton" Click="PomodoroButton_Click" Foreground="White" Margin="2" Background="Transparent" FontWeight="Bold" FontSize="18" CornerRadius="5">Pomodoro</Button>
+							<Button Name="ShortBreakButton" Click="ShortBreakButton_Click" Foreground="White" Margin="2" Background="Transparent" FontWeight="Bold" FontSize="18" CornerRadius="5">Short Break</Button>
+							<Button Name="LongBreakButton" Click="LongBreakButton_Click" Foreground="White" Margin="2" Background="Transparent" FontWeight="Bold" FontSize="18" CornerRadius="5">Long Break</Button>
+						</StackPanel>
+
+						<TextBlock Name="Timer" Text="25:00" Foreground="White" FontSize="65" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,25,0,0"/>
+
+						<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0">
+							<Button Name="StartPauseButton" Click="StartPauseButton_Click" Background="Black" Foreground="White" FontWeight="DemiBold" FontSize="18" Padding="10" Margin="10, 30">Start</Button>
+							<Button Name="ResetButton" Click="ResetButton_Click" IsVisible="False" Background="Black" Foreground="White" FontWeight="DemiBold" FontSize="18" Padding="10" Margin="10, 30">Reset</Button>
+						</StackPanel>
+						
+						<Button Name="FlowStateButton" Click="FlowStateButton_Click" Foreground="#ed1d24" Background="WhiteSmoke" FontWeight="ExtraBold" FontSize="16" Padding="90,10" HorizontalAlignment="Center">FlowState</Button>
+
+					</StackPanel>
+				</Grid>
+			</Border>
+		</StackPanel>
+	</Grid>
+</UserControl>

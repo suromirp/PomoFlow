@@ -1,0 +1,14 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PomoFlow.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:PomoFlow.Views"
+        mc:Ignorable="d" d:DesignWidth="550" d:DesignHeight="450"
+        x:Class="PomoFlow.Views.MainWindow"
+        Icon="/Assets/PomoFlow-logo.ico"
+        Title="PomoFlow"
+		Width="550" Height="450"
+	    MinWidth="385" MinHeight="335">
+	<views:MainView />
+</Window>
