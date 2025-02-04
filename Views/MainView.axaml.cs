@@ -143,7 +143,6 @@ namespace PomoFlow.Views
             });
         }
 
-
         // Update the timer display
         private void OnTimerUpdated(string time)
         {
@@ -172,6 +171,7 @@ namespace PomoFlow.Views
             });
         }
 
+        //TODO: make button only visible when close to ending time
         private void FlowStateButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             AudioPlayer.PlaySound("Effects/FlowState.wav");
@@ -180,9 +180,8 @@ namespace PomoFlow.Views
             {
                 return;
             }
-
+            //TODO: make time customizable in settings
             _pomodoroTimer.AddTime(20);
-
         }
 
         private void UpdateButtonStyles()
@@ -202,6 +201,5 @@ namespace PomoFlow.Views
                 ? activeBackground
                 : inactiveBackground;
         }
-
     }
 }

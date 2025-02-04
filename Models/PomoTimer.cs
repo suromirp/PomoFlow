@@ -48,6 +48,8 @@ namespace PomoFlow.Models
             TimerRunning = false;
         }
 
+        // Set length of timers
+        //TODO: make settings customizable in mainwindow
         public enum TimerMode
         {
             Pomodoro = 25,
@@ -75,7 +77,7 @@ namespace PomoFlow.Models
                 _timeRemaining = _timeRemaining.Subtract(TimeSpan.FromSeconds(1));
                 TimerUpdated?.Invoke(_timeRemaining.ToString(@"mm\:ss")); // Trigger the event
             }
-            else // If the timer is over, reset the timer to 25:00 minutes
+            else // If the timer is over, reset the timer to 25:00 minutes and play sound
             {
                 AudioPlayer.PlaySound("Alarms/Alarm-Sound.wav");
                 _timer.Stop();
@@ -100,6 +102,5 @@ namespace PomoFlow.Models
             _timeRemaining = _timeRemaining.Add(TimeSpan.FromMinutes(minutes));
             TimerUpdated?.Invoke(_timeRemaining.ToString(@"mm\:ss"));
         }
-
     }
 }
